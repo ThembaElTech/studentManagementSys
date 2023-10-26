@@ -4,10 +4,14 @@ import com.example.studentManSys.Entity.Student;
 import com.example.studentManSys.Service.StudentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import javax.naming.Binding;
 
 @Controller
 public class StudentController {
@@ -69,6 +73,7 @@ public class StudentController {
 
     @GetMapping("/students/{id}")
     public String deleteStudent(@PathVariable Long id) {
+
         studentService.deleteStudentById(id);
         return "redirect:/students";
     }
