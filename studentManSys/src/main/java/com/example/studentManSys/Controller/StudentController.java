@@ -30,6 +30,12 @@ public class StudentController {
         return "students";
     }
 
+    @GetMapping("/landingPage")
+    public String LandingPage(Model model) {
+
+        return "landingPage";
+    }
+
     @GetMapping("/students/new")
     public String createStudentForm(Model model) {
 
