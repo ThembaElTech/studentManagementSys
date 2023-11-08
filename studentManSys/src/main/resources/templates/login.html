@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-      th:replace="base::layout(~{::section})">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
 <head>
     <meta charset="ISO-8859-1">
     <title>Student Management System</title>
@@ -15,13 +14,15 @@
                     <div class="card-header text-center fs-4">Login Page</div>
 
                     <div th:if="${param.error}" class="alert alert-danger">
-                        Invalid username & Password</div>
+                        Invalid username & Password
+                    </div>
 
                     <div th:if="${param.logout}" class="alert alert-success">
-                        Logout Sucessfully</div>
+                        Logout Sucessfully
+                    </div>
 
                     <div class="card-body">
-                        <form action="/login" method="post">
+                        <form method="post" th:action="@{/register}">
                             <div class="mb-3">
                                 <label>Enter Email</label> <input type="text" name="username" class="form-control">
                             </div>
